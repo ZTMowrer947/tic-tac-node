@@ -4,6 +4,9 @@
   "description": "A simple tic-tac-toe program",
   "main": "dist/index.js",
   "scripts": {
+    "dev": "node src",
+    "build": "babel --extensions \".ts\" -d dist src",
+    "start": "node dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
