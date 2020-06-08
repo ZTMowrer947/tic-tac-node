@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ZTMowrer947/tic-tac-node/issues"
   },
-  "homepage": "https://github.com/ZTMowrer947/tic-tac-node#readme"
+  "homepage": "https://github.com/ZTMowrer947/tic-tac-node#readme",
+  "devDependencies": {
+    "typescript": "~3.9.5"
+  }
 }
