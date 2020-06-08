@@ -7,6 +7,8 @@
     "dev": "node src",
     "build": "babel --extensions \".ts\" -d dist src",
     "start": "node dist",
+    "typecheck": "tsc -noEmit",
+    "typecheck:watch": "tsc -noEmit -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
