@@ -7,8 +7,10 @@ import Coordinate from '../../../models/Coordinate';
 describe('AI helper for winning moves', () => {
     let rowGrids: Grid[];
     let colGrids: Grid[];
+    let diagonalGrids: Grid[];
     let colExpectedMoves: Coordinate[];
     let rowExpectedMoves: Coordinate[];
+    let diagonalExpectedMoves: Coordinate[];
 
     beforeAll(() => {
         // Define board grids to test for rows, columns, and diagonals
@@ -108,6 +110,39 @@ describe('AI helper for winning moves', () => {
             ],
         ];
 
+        diagonalGrids = [
+            [
+                [' ', 'X', 'O'],
+                ['O', 'X', 'X'],
+                ['O', 'O', 'X'],
+            ],
+            [
+                ['X', 'X', 'O'],
+                ['O', ' ', 'X'],
+                ['O', 'O', 'X'],
+            ],
+            [
+                ['X', 'X', 'O'],
+                ['O', 'X', 'X'],
+                ['O', 'O', ' '],
+            ],
+            [
+                ['O', 'O', 'X'],
+                ['O', 'X', 'X'],
+                [' ', 'X', 'O'],
+            ],
+            [
+                ['O', 'O', 'X'],
+                ['O', ' ', 'X'],
+                ['X', 'X', 'O'],
+            ],
+            [
+                ['O', 'O', ' '],
+                ['O', 'X', 'X'],
+                ['X', 'X', 'O'],
+            ],
+        ];
+
         // Define expected moves for each of the above
         rowExpectedMoves = [
             { x: 0, y: 0 },
@@ -132,6 +167,15 @@ describe('AI helper for winning moves', () => {
             { x: 2, y: 1 },
             { x: 2, y: 2 },
         ];
+
+        diagonalExpectedMoves = [
+            { x: 0, y: 0 },
+            { x: 1, y: 1 },
+            { x: 2, y: 2 },
+            { x: 0, y: 2 },
+            { x: 1, y: 1 },
+            { x: 2, y: 0 },
+        ];
     });
 
     it('should determine winning move for rows', () => {
@@ -153,6 +197,20 @@ describe('AI helper for winning moves', () => {
         colGrids.forEach((grid, index) => {
             // Get expected move
             const expected = colExpectedMoves[index];
+
+            // Calculate actual move
+            const actual = findWinningMove('X', grid);
+
+            // Expect moves to match
+            expect(actual).toStrictEqual(expected);
+        });
+    });
+
+    it('should determine winning move for diagonals', () => {
+        // Iterate through diagonal win grids
+        diagonalGrids.forEach((grid, index) => {
+            // Get expected move
+            const expected = diagonalExpectedMoves[index];
 
             // Calculate actual move
             const actual = findWinningMove('X', grid);
