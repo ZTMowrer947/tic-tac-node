@@ -1,5 +1,5 @@
 // Imports
-import { GridRow, Player, Grid } from '../../models/Board';
+import { Grid, GridRow, MutableGrid, Player } from '../../models/Board';
 import Coordinate from '../../models/Coordinate';
 
 // Functions
@@ -34,12 +34,43 @@ function findWinningRow(winLine: GridRow, grid: Grid): Coordinate | null {
     return null;
 }
 
+function findWinningCol(winLine: GridRow, grid: Grid): Coordinate | null {
+    // Define grid to mutate
+    const cols: MutableGrid = [
+        [' ', ' ', ' '],
+        [' ', ' ', ' '],
+        [' ', ' ', ' '],
+    ];
+
+    // Rotate grid
+    grid.forEach((row, y) => {
+        row.forEach((space, x) => {
+            cols[x][y] = space;
+        });
+    });
+
+    // Attempt to find winning row in rotated grid
+    const coordinates = findWinningRow(winLine, cols);
+
+    // If coordinates were found,
+    if (coordinates) {
+        // Flip them
+        return {
+            x: coordinates.y,
+            y: coordinates.x,
+        };
+    }
+
+    // Otherwise, return null
+    return null;
+}
+
 function findWinningMove(player: Player, grid: Grid): Coordinate | null {
     // Calculate winning line for player
     const winLine = getWinLine(player);
 
-    // Check rows (later columns and diagonals) for a winning move
-    return findWinningRow(winLine, grid);
+    // Check rows and columns (later diagonals) for a winning move
+    return findWinningRow(winLine, grid) ?? findWinningCol(winLine, grid);
 }
 
 // Exports
