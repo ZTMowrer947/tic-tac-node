@@ -5,12 +5,12 @@ import Coordinate from './Coordinate';
 /**
  * Represents an X or O on a tic-tac-toe board.
  */
-type Player = 'X' | 'O';
+type PlayerMark = 'X' | 'O';
 
 /**
  * Represents a space on a tic-tac-toe board.
  */
-type GridSpace = Player | ' ';
+type GridSpace = PlayerMark | ' ';
 
 /**
  * Represents a row of three spaces on a tic-tac-toe board.
@@ -57,7 +57,7 @@ class Board {
         return this._grid;
     }
 
-    public makeMove(player: Player, { x, y }: Coordinate): void {
+    public makeMove(player: PlayerMark, { x, y }: Coordinate): void {
         // If the coordinates are invalid,
         if (!this._grid[y]?.[x]) {
             // Throw an error
@@ -78,4 +78,4 @@ class Board {
 
 // Exports
 export default Board;
-export { Player, GridRow, GridSpace, Grid, MutableGrid };
+export { PlayerMark, GridRow, GridSpace, Grid, MutableGrid };

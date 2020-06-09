@@ -1,7 +1,7 @@
 // Imports
 import findWinningMove from './win';
 import { getOpponent } from '../../helpers/player';
-import { Grid, Player } from '../../models/Board';
+import { Grid, PlayerMark } from '../../models/Board';
 import Coordinate from '../../models/Coordinate';
 
 // Functions
@@ -10,7 +10,7 @@ import Coordinate from '../../models/Coordinate';
  * @param player The player to perform the block.
  * @param grid The grid to operate on.
  */
-function findBlockingMove(player: Player, grid: Grid): Coordinate | null {
+function findBlockingMove(player: PlayerMark, grid: Grid): Coordinate | null {
     // Get opponent player
     const opponent = getOpponent(player);
 

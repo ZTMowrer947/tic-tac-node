@@ -1,4 +1,4 @@
-import Board, { MutableGrid, Player } from '../Board';
+import Board, { MutableGrid, PlayerMark } from '../Board';
 import Coordinate from '../Coordinate';
 
 // Test Suite
@@ -45,7 +45,7 @@ describe('Board class', () => {
 
     describe('makeMove method', () => {
         let board: Board;
-        const player: Player = 'X';
+        const player: PlayerMark = 'X';
 
         beforeEach(() => {
             board = new Board();

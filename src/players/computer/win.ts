@@ -1,5 +1,5 @@
 // Imports
-import { Grid, GridRow, MutableGrid, Player } from '../../models/Board';
+import { Grid, GridRow, MutableGrid, PlayerMark } from '../../models/Board';
 import Coordinate from '../../models/Coordinate';
 
 // Functions
@@ -7,7 +7,7 @@ import Coordinate from '../../models/Coordinate';
  * Calculates the winning line for the given player.
  * @param player The player to calculate the winning line for.
  */
-const getWinLine = (player: Player): GridRow => [player, player, ' '];
+const getWinLine = (player: PlayerMark): GridRow => [player, player, ' '];
 
 /**
  * Determines whether the two given grid lines are equal.
@@ -125,7 +125,7 @@ function findWinningDiagonal(winLine: GridRow, grid: Grid): Coordinate | null {
  * @param player The player to win.
  * @param grid The grid to operate on.
  */
-function findWinningMove(player: Player, grid: Grid): Coordinate | null {
+function findWinningMove(player: PlayerMark, grid: Grid): Coordinate | null {
     // Calculate winning line for player
     const winLine = getWinLine(player);
 

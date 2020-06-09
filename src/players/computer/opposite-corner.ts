@@ -1,6 +1,6 @@
 // Imports
 import Coordinate from '../../models/Coordinate';
-import { Grid, Player } from '../../models/Board';
+import { Grid, PlayerMark } from '../../models/Board';
 import { getOpponent } from '../../helpers/player';
 
 // Constants
@@ -12,7 +12,10 @@ const corners: Coordinate[] = [
 ];
 
 // Functions
-function findOppositeCornerMove(player: Player, grid: Grid): Coordinate | null {
+function findOppositeCornerMove(
+    player: PlayerMark,
+    grid: Grid
+): Coordinate | null {
     // Get opponent player
     const opponent = getOpponent(player);
 
