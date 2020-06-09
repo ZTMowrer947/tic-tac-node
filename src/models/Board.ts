@@ -1,4 +1,5 @@
 // Imports
+import Coordinate from './Coordinate';
 
 // Helper types
 /**
@@ -27,6 +28,9 @@ type MutableGrid = Readonly<[GridRow, GridRow, GridRow]>;
 type Grid = Readonly<[Readonly<GridRow>, Readonly<GridRow>, Readonly<GridRow>]>;
 
 // Class
+/**
+ * Represents a tic-tac-toe board.
+ */
 class Board {
     /**
      * A mutable copy of the tic-tac-toe grid.
@@ -51,6 +55,24 @@ class Board {
      */
     public get grid(): Grid {
         return this._grid;
+    }
+
+    public makeMove(player: Player, { x, y }: Coordinate): void {
+        // If the coordinates are invalid,
+        if (!this._grid[y]?.[x]) {
+            // Throw an error
+            throw new Error(`Invalid coordinates: (${x}, ${y})`);
+        }
+
+        // Otherwise, store player mark at given coordinates
+        this._grid[y][x] = player;
+    }
+
+    /**
+     * Returns the stringified game board.
+     */
+    public toString(): string {
+        return this._grid.map((row) => row.join('|')).join('\n-----\n');
     }
 }
 
