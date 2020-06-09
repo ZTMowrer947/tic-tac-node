@@ -78,4 +78,4 @@ class Board {
 
 // Exports
 export default Board;
-export { Player, GridSpace, Grid };
+export { Player, GridSpace, Grid, MutableGrid };
