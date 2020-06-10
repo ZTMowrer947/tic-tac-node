@@ -4,6 +4,7 @@ import Coordinate from '../../models/Coordinate';
 import Player from '../../models/Player';
 import findWinningMove from './win';
 import findBlockingMove from './block';
+import findForkBlockingMove from './fork-block';
 import findCenterMove from './center';
 import findOppositeCornerMove from './opposite-corner';
 import findAnyCornerMove from './any-corner';
@@ -26,6 +27,7 @@ class Computer implements Player {
         const move =
             findWinningMove(this._mark, grid) ??
             findBlockingMove(this._mark, grid) ??
+            findForkBlockingMove(this._mark, grid) ??
             findCenterMove(grid) ??
             findOppositeCornerMove(this._mark, grid) ??
             findAnyCornerMove(grid) ??
