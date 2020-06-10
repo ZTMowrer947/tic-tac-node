@@ -45,34 +45,73 @@ if (startingFirstIndex === -1) {
     process.exit(0);
 }
 
-// Otherwise, initialize game
-const game = new Game({
+// Otherwise, setup options
+const gameOptions = {
     humanPlayingAs: playingAsChoices[playingAsIndex],
     startingFirst: startingFirstChoices[startingFirstIndex],
-});
+};
 
-while (game.status !== 'Done') {
+// Start game loop
+while (true) {
+    // Initialize game
+    const game = new Game(gameOptions);
+
+    // While the game is ongoing,
+    while (game.status !== 'Done') {
+        // Print out the game board
+        console.clear();
+        console.log(game.toString());
+        console.log('\n\n');
+
+        // Take a game turn
+        game.takeTurn();
+    }
+
+    // Print out final board when game is done
     console.clear();
     console.log(game.toString());
     console.log('\n\n');
 
-    game.takeTurn();
-}
+    // Consider who won the game
+    switch (game.winningPlayer) {
+        // Human player
+        case 'Human':
+            // Set human to be the one to start first next time
+            gameOptions.startingFirst = 'Human';
 
-console.clear();
-console.log(game.toString());
-console.log('\n\n');
+            // Display congratulatory message
+            console.log('You win!');
+            break;
 
-switch (game.winningPlayer) {
-    case 'Human':
-        console.log('You win!');
+        // Computer player
+        case 'AI':
+            // Set computer to be the one to start first next time
+            gameOptions.startingFirst = 'AI';
+
+            // Display loss message
+            console.log('Sorry, you lost.');
+            break;
+
+        // Drawn game
+        default:
+            // Alternate who shall go first next time
+            gameOptions.startingFirst =
+                gameOptions.startingFirst === 'Human' ? 'AI' : 'Human';
+
+            // Display draw message
+            console.log("It's a draw!");
+            break;
+    }
+
+    // Ask player if they like to play again
+    const playAgain = readline.keyInYNStrict('Would you like to play again?');
+
+    // If they chose not to play again
+    if (!playAgain) {
+        // Thank user for playing
+        console.log('Thanks for playing!');
+
+        // Exit loop
         break;
-
-    case 'AI':
-        console.log('Sorry, you lost.');
-        break;
-
-    default:
-        console.log("It's a draw!");
-        break;
+    }
 }
