@@ -10,7 +10,7 @@
     "start": "node dist",
     "typecheck": "tsc -noEmit",
     "typecheck:watch": "tsc -noEmit -w",
-    "test": "jest",
+    "test": "vitest",
     "prepare": "husky"
   },
   "repository": {
