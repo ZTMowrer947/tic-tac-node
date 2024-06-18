@@ -7,3 +7,4 @@ README.md
 .pnp.*
 .yarnrc.yml
 yarn.lock
+.yarn/
