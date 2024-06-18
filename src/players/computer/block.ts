@@ -11,11 +11,11 @@ import Coordinate from '../../models/Coordinate';
  * @param grid The grid to operate on.
  */
 function findBlockingMove(player: PlayerMark, grid: Grid): Coordinate | null {
-    // Get opponent player
-    const opponent = getOpponent(player);
+  // Get opponent player
+  const opponent = getOpponent(player);
 
-    // Find which move the opponent could play to win, and play that move to block it
-    return findWinningMove(opponent, grid);
+  // Find which move the opponent could play to win, and play that move to block it
+  return findWinningMove(opponent, grid);
 }
 
 // Export

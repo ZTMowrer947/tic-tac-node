@@ -9,22 +9,22 @@ const playingAsChoices: PlayerMark[] = ['X', 'O'];
 
 // Welcome message
 console.log(
-    `Welcome to Tic-Tac-Node version ${process.env.npm_package_version}.`
+  `Welcome to Tic-Tac-Node version ${process.env.npm_package_version}.`,
 );
 
 // Decide who goes first
 const startingFirstIndex = readline.keyInSelect(
-    startingFirstChoices,
-    'Who shall go first?',
-    {
-        cancel: 'Exit',
-    }
+  startingFirstChoices,
+  'Who shall go first?',
+  {
+    cancel: 'Exit',
+  },
 );
 
 // If the user chose to exit,
 if (startingFirstIndex === -1) {
-    // Exit with 0 code
-    process.exit(0);
+  // Exit with 0 code
+  process.exit(0);
 }
 
 // Otherwise, continue on
@@ -32,86 +32,86 @@ console.log('\n\n');
 
 // Determine whether human shall play as X or O
 const playingAsIndex = readline.keyInSelect(
-    playingAsChoices,
-    'Who shall you play as?',
-    {
-        cancel: 'Exit',
-    }
+  playingAsChoices,
+  'Who shall you play as?',
+  {
+    cancel: 'Exit',
+  },
 );
 
 // If the user chose to exit,
 if (startingFirstIndex === -1) {
-    // Exit with 0 code
-    process.exit(0);
+  // Exit with 0 code
+  process.exit(0);
 }
 
 // Otherwise, setup options
 const gameOptions = {
-    humanPlayingAs: playingAsChoices[playingAsIndex],
-    startingFirst: startingFirstChoices[startingFirstIndex],
+  humanPlayingAs: playingAsChoices[playingAsIndex],
+  startingFirst: startingFirstChoices[startingFirstIndex],
 };
 
 // Start game loop
 while (true) {
-    // Initialize game
-    const game = new Game(gameOptions);
+  // Initialize game
+  const game = new Game(gameOptions);
 
-    // While the game is ongoing,
-    while (game.status !== 'Done') {
-        // Print out the game board
-        console.clear();
-        console.log(game.toString());
-        console.log('\n\n');
-
-        // Take a game turn
-        game.takeTurn();
-    }
-
-    // Print out final board when game is done
+  // While the game is ongoing,
+  while (game.status !== 'Done') {
+    // Print out the game board
     console.clear();
     console.log(game.toString());
     console.log('\n\n');
 
-    // Consider who won the game
-    switch (game.winningPlayer) {
-        // Human player
-        case 'Human':
-            // Set human to be the one to start first next time
-            gameOptions.startingFirst = 'Human';
+    // Take a game turn
+    game.takeTurn();
+  }
 
-            // Display congratulatory message
-            console.log('You win!');
-            break;
+  // Print out final board when game is done
+  console.clear();
+  console.log(game.toString());
+  console.log('\n\n');
 
-        // Computer player
-        case 'AI':
-            // Set computer to be the one to start first next time
-            gameOptions.startingFirst = 'AI';
+  // Consider who won the game
+  switch (game.winningPlayer) {
+    // Human player
+    case 'Human':
+      // Set human to be the one to start first next time
+      gameOptions.startingFirst = 'Human';
 
-            // Display loss message
-            console.log('Sorry, you lost.');
-            break;
+      // Display congratulatory message
+      console.log('You win!');
+      break;
 
-        // Drawn game
-        default:
-            // Alternate who shall go first next time
-            gameOptions.startingFirst =
-                gameOptions.startingFirst === 'Human' ? 'AI' : 'Human';
+    // Computer player
+    case 'AI':
+      // Set computer to be the one to start first next time
+      gameOptions.startingFirst = 'AI';
 
-            // Display draw message
-            console.log("It's a draw!");
-            break;
-    }
+      // Display loss message
+      console.log('Sorry, you lost.');
+      break;
 
-    // Ask player if they like to play again
-    const playAgain = readline.keyInYNStrict('Would you like to play again?');
+    // Drawn game
+    default:
+      // Alternate who shall go first next time
+      gameOptions.startingFirst =
+        gameOptions.startingFirst === 'Human' ? 'AI' : 'Human';
 
-    // If they chose not to play again
-    if (!playAgain) {
-        // Thank user for playing
-        console.log('Thanks for playing!');
+      // Display draw message
+      console.log("It's a draw!");
+      break;
+  }
 
-        // Exit loop
-        break;
-    }
+  // Ask player if they like to play again
+  const playAgain = readline.keyInYNStrict('Would you like to play again?');
+
+  // If they chose not to play again
+  if (!playAgain) {
+    // Thank user for playing
+    console.log('Thanks for playing!');
+
+    // Exit loop
+    break;
+  }
 }

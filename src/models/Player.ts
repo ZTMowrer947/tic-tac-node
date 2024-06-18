@@ -4,9 +4,9 @@ import Coordinate from './Coordinate';
 
 // Interface
 interface Player {
-    mark: PlayerMark;
+  mark: PlayerMark;
 
-    selectMove(grid: Grid): Coordinate;
+  selectMove(grid: Grid): Coordinate;
 }
 
 // Export
