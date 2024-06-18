@@ -42,6 +42,7 @@ const RAW_RUNTIME_STATE =
           ["lodash", "npm:4.17.19"],\
           ["prettier", "npm:3.3.2"],\
           ["readline-sync", "npm:1.4.10"],\
+          ["tsx", "npm:4.15.6"],\
           ["typescript", "patch:typescript@npm%3A5.4.5#optional!builtin<compat/typescript>::version=5.4.5&hash=5adc0c"],\
           ["typescript-eslint", "virtual:de991298b07724c50b01ea358394391e2abcbff84fd61423258c70f2c6e437582c3f2dea14987edc11ce15e5719f484324b5d68d6daacd579e211c1ff9c59c78#npm:7.13.1"]\
         ],\
@@ -3352,6 +3353,14 @@ const RAW_RUNTIME_STATE =
           ["node-gyp", "npm:7.1.2"]\
         ],\
         "linkType": "HARD"\
+      }],\
+      ["patch:fsevents@npm%3A2.3.3#optional!builtin<compat/fsevents>::version=2.3.3&hash=df0bf1", {\
+        "packageLocation": "./.yarn/unplugged/fsevents-patch-6b67494872/node_modules/fsevents/",\
+        "packageDependencies": [\
+          ["fsevents", "patch:fsevents@npm%3A2.3.3#optional!builtin<compat/fsevents>::version=2.3.3&hash=df0bf1"],\
+          ["node-gyp", "npm:7.1.2"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["gauge", [\
@@ -3428,6 +3437,16 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/get-stream-npm-8.0.1-c921b4840e-dde5511e2e.zip/node_modules/get-stream/",\
         "packageDependencies": [\
           ["get-stream", "npm:8.0.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["get-tsconfig", [\
+      ["npm:4.7.5", {\
+        "packageLocation": "./.yarn/cache/get-tsconfig-npm-4.7.5-0e53a23e62-de7de5e497.zip/node_modules/get-tsconfig/",\
+        "packageDependencies": [\
+          ["get-tsconfig", "npm:4.7.5"],\
+          ["resolve-pkg-maps", "npm:1.0.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -6081,6 +6100,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["resolve-pkg-maps", [\
+      ["npm:1.0.0", {\
+        "packageLocation": "./.yarn/cache/resolve-pkg-maps-npm-1.0.0-135b70c854-0763150adf.zip/node_modules/resolve-pkg-maps/",\
+        "packageDependencies": [\
+          ["resolve-pkg-maps", "npm:1.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["resolve-url", [\
       ["npm:0.2.1", {\
         "packageLocation": "./.yarn/cache/resolve-url-npm-0.2.1-39edb8f908-c8bbf63857.zip/node_modules/resolve-url/",\
@@ -6825,6 +6853,7 @@ const RAW_RUNTIME_STATE =
           ["lodash", "npm:4.17.19"],\
           ["prettier", "npm:3.3.2"],\
           ["readline-sync", "npm:1.4.10"],\
+          ["tsx", "npm:4.15.6"],\
           ["typescript", "patch:typescript@npm%3A5.4.5#optional!builtin<compat/typescript>::version=5.4.5&hash=5adc0c"],\
           ["typescript-eslint", "virtual:de991298b07724c50b01ea358394391e2abcbff84fd61423258c70f2c6e437582c3f2dea14987edc11ce15e5719f484324b5d68d6daacd579e211c1ff9c59c78#npm:7.13.1"]\
         ],\
@@ -6953,6 +6982,18 @@ const RAW_RUNTIME_STATE =
         "packagePeers": [\
           "@types/typescript",\
           "typescript"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["tsx", [\
+      ["npm:4.15.6", {\
+        "packageLocation": "./.yarn/cache/tsx-npm-4.15.6-46c92988cf-d4d33a75e0.zip/node_modules/tsx/",\
+        "packageDependencies": [\
+          ["tsx", "npm:4.15.6"],\
+          ["esbuild", "npm:0.21.5"],\
+          ["fsevents", "patch:fsevents@npm%3A2.3.3#optional!builtin<compat/fsevents>::version=2.3.3&hash=df0bf1"],\
+          ["get-tsconfig", "npm:4.7.5"]\
         ],\
         "linkType": "HARD"\
       }]\
