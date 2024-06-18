@@ -416,10 +416,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^14.0.12":
-  version: 14.0.12
-  resolution: "@types/node@npm:14.0.12"
-  checksum: 10/8ec6146ebff0b199c93c284e272075b386a36b9f33426e6905b9c4ef22859606e0a22795032b7834001a0daeb815d751c595d4851a24d70ac38a547a51fd7fbf
+"@types/node@npm:^20.14.5":
+  version: 20.14.5
+  resolution: "@types/node@npm:20.14.5"
+  dependencies:
+    undici-types: "npm:~5.26.4"
+  checksum: 10/74c7974a8c75280f9397f22ce34d10d5575668e3c357a165f385c9365c39b3ccda3aa2e7237e7e907fc72e515afb93cc0be1f3e2074cc1889c1ffeb01d2843cc
   languageName: node
   linkType: hard
 
@@ -2932,7 +2934,7 @@ __metadata:
   resolution: "tic-tac-node@workspace:."
   dependencies:
     "@eslint/js": "npm:^9.5.0"
-    "@types/node": "npm:^14.0.12"
+    "@types/node": "npm:^20.14.5"
     "@types/readline-sync": "npm:^1.4.3"
     esbuild: "npm:^0.21.5"
     eslint: "npm:9.x"
@@ -3086,6 +3088,13 @@ __metadata:
   version: 1.5.3
   resolution: "ufo@npm:1.5.3"
   checksum: 10/2b30dddd873c643efecdb58cfe457183cd4d95937ccdacca6942c697b87a2c578232c25a5149fda85436696bf0fdbc213bf2b220874712bc3e58c0fb00a2c950
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~5.26.4":
+  version: 5.26.5
+  resolution: "undici-types@npm:5.26.5"
+  checksum: 10/0097779d94bc0fd26f0418b3a05472410408877279141ded2bd449167be1aed7ea5b76f756562cb3586a07f251b90799bab22d9019ceba49c037c76445f7cddd
   languageName: node
   linkType: hard
 

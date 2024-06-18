@@ -28,7 +28,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["@eslint/js", "npm:9.5.0"],\
-          ["@types/node", "npm:14.0.12"],\
+          ["@types/node", "npm:20.14.5"],\
           ["@types/readline-sync", "npm:1.4.3"],\
           ["esbuild", "npm:0.21.5"],\
           ["eslint", "npm:9.5.0"],\
@@ -573,10 +573,11 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@types/node", [\
-      ["npm:14.0.12", {\
-        "packageLocation": "./.yarn/cache/@types-node-npm-14.0.12-3fd4923407-8ec6146ebf.zip/node_modules/@types/node/",\
+      ["npm:20.14.5", {\
+        "packageLocation": "./.yarn/cache/@types-node-npm-20.14.5-07c835e492-74c7974a8c.zip/node_modules/@types/node/",\
         "packageDependencies": [\
-          ["@types/node", "npm:14.0.12"]\
+          ["@types/node", "npm:20.14.5"],\
+          ["undici-types", "npm:5.26.5"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -3424,7 +3425,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["tic-tac-node", "workspace:."],\
           ["@eslint/js", "npm:9.5.0"],\
-          ["@types/node", "npm:14.0.12"],\
+          ["@types/node", "npm:20.14.5"],\
           ["@types/readline-sync", "npm:1.4.3"],\
           ["esbuild", "npm:0.21.5"],\
           ["eslint", "npm:9.5.0"],\
@@ -3622,6 +3623,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["undici-types", [\
+      ["npm:5.26.5", {\
+        "packageLocation": "./.yarn/cache/undici-types-npm-5.26.5-de4f7c7bb9-0097779d94.zip/node_modules/undici-types/",\
+        "packageDependencies": [\
+          ["undici-types", "npm:5.26.5"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["uri-js", [\
       ["npm:4.2.2", {\
         "packageLocation": "./.yarn/cache/uri-js-npm-4.2.2-e6ac2fca26-e9499d30bf.zip/node_modules/uri-js/",\
@@ -3715,7 +3725,7 @@ const RAW_RUNTIME_STATE =
           ["vite", "virtual:a3a8321a8984334fdf83cb9c14ea480adb3cd6735a4b351fb6a61d55330e9d0fc1cc1786aaa612868181426b94f4f18444228b1435bd10617504aa9e201a05e7#npm:5.3.1"],\
           ["@types/less", null],\
           ["@types/lightningcss", null],\
-          ["@types/node", "npm:14.0.12"],\
+          ["@types/node", "npm:20.14.5"],\
           ["@types/sass", null],\
           ["@types/stylus", null],\
           ["@types/sugarss", null],\
@@ -3779,7 +3789,7 @@ const RAW_RUNTIME_STATE =
           ["@types/edge-runtime__vm", null],\
           ["@types/happy-dom", null],\
           ["@types/jsdom", null],\
-          ["@types/node", "npm:14.0.12"],\
+          ["@types/node", "npm:20.14.5"],\
           ["@types/vitest__browser", null],\
           ["@types/vitest__ui", null],\
           ["@vitest/browser", null],\
