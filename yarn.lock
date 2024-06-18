@@ -951,13 +951,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash@npm:^4.14.155":
-  version: 4.14.155
-  resolution: "@types/lodash@npm:4.14.155"
-  checksum: 10/8ad576daa4e8fbfd0ce8339d105bc417c783cb8aaa3867d7b26e4d94492bc142c1e90f60684cef9c0d28ae759cb5a1202b7dfb738716a323c4ca12b87f83fd67
-  languageName: node
-  linkType: hard
-
 "@types/node@npm:*, @types/node@npm:^14.0.12":
   version: 14.0.12
   resolution: "@types/node@npm:14.0.12"
@@ -4273,7 +4266,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.13, lodash@npm:^4.17.15, lodash@npm:^4.17.19":
+"lodash@npm:^4.17.13, lodash@npm:^4.17.15":
   version: 4.17.19
   resolution: "lodash@npm:4.17.19"
   checksum: 10/2174baff115e9d4d56c7eb2fabaa2f4d934d0aac6ad6b4e1000354aeb5a7342d3c9cd566b3ec223e580b6ecedc87dfec01f1744adb14d26227a4fef0c47ee16c
@@ -5933,7 +5926,6 @@ __metadata:
   dependencies:
     "@eslint/js": "npm:^9.5.0"
     "@types/jest": "npm:^25.2.3"
-    "@types/lodash": "npm:^4.14.155"
     "@types/node": "npm:^14.0.12"
     "@types/readline-sync": "npm:^1.4.3"
     esbuild: "npm:^0.21.5"
@@ -5943,7 +5935,6 @@ __metadata:
     husky: "npm:^9.0.11"
     jest: "npm:^26.0.1"
     lint-staged: "npm:^15.2.7"
-    lodash: "npm:^4.17.19"
     prettier: "npm:^3.3.2"
     readline-sync: "npm:^1.4.10"
     tsx: "npm:^4.15.6"

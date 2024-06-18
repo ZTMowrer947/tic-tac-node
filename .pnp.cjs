@@ -29,7 +29,6 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@eslint/js", "npm:9.5.0"],\
           ["@types/jest", "npm:25.2.3"],\
-          ["@types/lodash", "npm:4.14.155"],\
           ["@types/node", "npm:14.0.12"],\
           ["@types/readline-sync", "npm:1.4.3"],\
           ["esbuild", "npm:0.21.5"],\
@@ -39,7 +38,6 @@ const RAW_RUNTIME_STATE =
           ["husky", "npm:9.0.11"],\
           ["jest", "npm:26.0.1"],\
           ["lint-staged", "npm:15.2.7"],\
-          ["lodash", "npm:4.17.19"],\
           ["prettier", "npm:3.3.2"],\
           ["readline-sync", "npm:1.4.10"],\
           ["tsx", "npm:4.15.6"],\
@@ -1232,15 +1230,6 @@ const RAW_RUNTIME_STATE =
           ["@types/jest", "npm:25.2.3"],\
           ["jest-diff", "npm:25.5.0"],\
           ["pretty-format", "npm:25.5.0"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@types/lodash", [\
-      ["npm:4.14.155", {\
-        "packageLocation": "./.yarn/cache/@types-lodash-npm-4.14.155-cc7b7fa6e7-8ad576daa4.zip/node_modules/@types/lodash/",\
-        "packageDependencies": [\
-          ["@types/lodash", "npm:4.14.155"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -6840,7 +6829,6 @@ const RAW_RUNTIME_STATE =
           ["tic-tac-node", "workspace:."],\
           ["@eslint/js", "npm:9.5.0"],\
           ["@types/jest", "npm:25.2.3"],\
-          ["@types/lodash", "npm:4.14.155"],\
           ["@types/node", "npm:14.0.12"],\
           ["@types/readline-sync", "npm:1.4.3"],\
           ["esbuild", "npm:0.21.5"],\
@@ -6850,7 +6838,6 @@ const RAW_RUNTIME_STATE =
           ["husky", "npm:9.0.11"],\
           ["jest", "npm:26.0.1"],\
           ["lint-staged", "npm:15.2.7"],\
-          ["lodash", "npm:4.17.19"],\
           ["prettier", "npm:3.3.2"],\
           ["readline-sync", "npm:1.4.10"],\
           ["tsx", "npm:4.15.6"],\
