@@ -4,3 +4,6 @@ README.md
 .eslintrc
 .prettierrc
 .babelrc
+.pnp.*
+.yarnrc.yml
+yarn.lock
