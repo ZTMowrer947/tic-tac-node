@@ -45,7 +45,6 @@ const RAW_RUNTIME_STATE =
           ["core-js", "npm:3.6.5"],\
           ["eslint", "npm:6.8.0"],\
           ["eslint-config-prettier", "virtual:de991298b07724c50b01ea358394391e2abcbff84fd61423258c70f2c6e437582c3f2dea14987edc11ce15e5719f484324b5d68d6daacd579e211c1ff9c59c78#npm:6.11.0"],\
-          ["eslint-plugin-prettier", "virtual:de991298b07724c50b01ea358394391e2abcbff84fd61423258c70f2c6e437582c3f2dea14987edc11ce15e5719f484324b5d68d6daacd579e211c1ff9c59c78#npm:3.1.3"],\
           ["husky", "npm:9.0.11"],\
           ["jest", "npm:26.0.1"],\
           ["lint-staged", "npm:15.2.7"],\
@@ -4219,33 +4218,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["eslint-plugin-prettier", [\
-      ["npm:3.1.3", {\
-        "packageLocation": "./.yarn/cache/eslint-plugin-prettier-npm-3.1.3-c6fceeea27-5f3523df03.zip/node_modules/eslint-plugin-prettier/",\
-        "packageDependencies": [\
-          ["eslint-plugin-prettier", "npm:3.1.3"]\
-        ],\
-        "linkType": "SOFT"\
-      }],\
-      ["virtual:de991298b07724c50b01ea358394391e2abcbff84fd61423258c70f2c6e437582c3f2dea14987edc11ce15e5719f484324b5d68d6daacd579e211c1ff9c59c78#npm:3.1.3", {\
-        "packageLocation": "./.yarn/__virtual__/eslint-plugin-prettier-virtual-bffb28b31d/0/cache/eslint-plugin-prettier-npm-3.1.3-c6fceeea27-5f3523df03.zip/node_modules/eslint-plugin-prettier/",\
-        "packageDependencies": [\
-          ["eslint-plugin-prettier", "virtual:de991298b07724c50b01ea358394391e2abcbff84fd61423258c70f2c6e437582c3f2dea14987edc11ce15e5719f484324b5d68d6daacd579e211c1ff9c59c78#npm:3.1.3"],\
-          ["@types/eslint", null],\
-          ["@types/prettier", null],\
-          ["eslint", "npm:6.8.0"],\
-          ["prettier", "npm:2.0.5"],\
-          ["prettier-linter-helpers", "npm:1.0.0"]\
-        ],\
-        "packagePeers": [\
-          "@types/eslint",\
-          "@types/prettier",\
-          "eslint",\
-          "prettier"\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["eslint-scope", [\
       ["npm:5.1.0", {\
         "packageLocation": "./.yarn/cache/eslint-scope-npm-5.1.0-2f7f4b93bb-d3a636ff05.zip/node_modules/eslint-scope/",\
@@ -4534,15 +4506,6 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/fast-deep-equal-npm-3.1.3-790edcfcf5-e21a9d8d84.zip/node_modules/fast-deep-equal/",\
         "packageDependencies": [\
           ["fast-deep-equal", "npm:3.1.3"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["fast-diff", [\
-      ["npm:1.2.0", {\
-        "packageLocation": "./.yarn/cache/fast-diff-npm-1.2.0-5ba4171bb6-f62419b3d7.zip/node_modules/fast-diff/",\
-        "packageDependencies": [\
-          ["fast-diff", "npm:1.2.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -7307,16 +7270,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["prettier-linter-helpers", [\
-      ["npm:1.0.0", {\
-        "packageLocation": "./.yarn/cache/prettier-linter-helpers-npm-1.0.0-6925131a7e-00ce8011cf.zip/node_modules/prettier-linter-helpers/",\
-        "packageDependencies": [\
-          ["prettier-linter-helpers", "npm:1.0.0"],\
-          ["fast-diff", "npm:1.2.0"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["pretty-format", [\
       ["npm:25.5.0", {\
         "packageLocation": "./.yarn/cache/pretty-format-npm-25.5.0-9def2180a5-da9e79b2b9.zip/node_modules/pretty-format/",\
@@ -8559,7 +8512,6 @@ const RAW_RUNTIME_STATE =
           ["core-js", "npm:3.6.5"],\
           ["eslint", "npm:6.8.0"],\
           ["eslint-config-prettier", "virtual:de991298b07724c50b01ea358394391e2abcbff84fd61423258c70f2c6e437582c3f2dea14987edc11ce15e5719f484324b5d68d6daacd579e211c1ff9c59c78#npm:6.11.0"],\
-          ["eslint-plugin-prettier", "virtual:de991298b07724c50b01ea358394391e2abcbff84fd61423258c70f2c6e437582c3f2dea14987edc11ce15e5719f484324b5d68d6daacd579e211c1ff9c59c78#npm:3.1.3"],\
           ["husky", "npm:9.0.11"],\
           ["jest", "npm:26.0.1"],\
           ["lint-staged", "npm:15.2.7"],\
