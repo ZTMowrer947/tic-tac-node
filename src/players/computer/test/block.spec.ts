@@ -1,0 +1,239 @@
+// Imports
+import { beforeAll, describe, expect, it } from 'vitest';
+
+import findblockingMove from '../block';
+import { Grid } from '../../../models/Board';
+import Coordinate from '../../../models/Coordinate';
+
+// Test Suite
+describe('AI helper for blocking moves', () => {
+  let rowGrids: Grid[];
+  let colGrids: Grid[];
+  let diagonalGrids: Grid[];
+  let colExpectedMoves: Coordinate[];
+  let rowExpectedMoves: Coordinate[];
+  let diagonalExpectedMoves: Coordinate[];
+
+  beforeAll(() => {
+    // Define board grids to test for rows, columns, and diagonals
+    rowGrids = [
+      [
+        [' ', 'X', 'X'],
+        ['O', 'O', 'X'],
+        ['X', 'O', 'O'],
+      ],
+      [
+        ['X', ' ', 'X'],
+        ['O', 'O', 'X'],
+        ['X', 'O', 'O'],
+      ],
+      [
+        ['X', 'X', ' '],
+        ['O', 'O', 'X'],
+        ['X', 'O', 'O'],
+      ],
+      [
+        ['O', 'O', 'X'],
+        [' ', 'X', 'X'],
+        ['O', 'X', 'O'],
+      ],
+      [
+        ['O', 'O', 'X'],
+        ['X', ' ', 'X'],
+        ['O', 'X', 'O'],
+      ],
+      [
+        ['O', 'O', 'X'],
+        ['X', 'X', ' '],
+        ['O', 'X', 'O'],
+      ],
+      [
+        ['O', 'X', 'O'],
+        ['X', 'O', 'O'],
+        [' ', 'X', 'X'],
+      ],
+      [
+        ['O', 'X', 'O'],
+        ['X', 'O', 'O'],
+        ['X', ' ', 'X'],
+      ],
+      [
+        ['O', 'X', 'O'],
+        ['X', 'O', 'O'],
+        ['X', 'X', ' '],
+      ],
+    ];
+
+    colGrids = [
+      [
+        [' ', 'O', 'X'],
+        ['X', 'O', 'O'],
+        ['X', 'X', 'O'],
+      ],
+      [
+        ['X', 'O', 'X'],
+        [' ', 'O', 'O'],
+        ['X', 'X', 'O'],
+      ],
+      [
+        ['X', 'O', 'X'],
+        ['X', 'O', 'O'],
+        [' ', 'X', 'O'],
+      ],
+      [
+        ['O', ' ', 'O'],
+        ['O', 'X', 'X'],
+        ['X', 'X', 'O'],
+      ],
+      [
+        ['O', 'X', 'O'],
+        ['O', ' ', 'X'],
+        ['X', 'X', 'O'],
+      ],
+      [
+        ['O', 'X', 'O'],
+        ['O', 'X', 'X'],
+        ['X', ' ', 'O'],
+      ],
+      [
+        ['O', 'X', ' '],
+        ['X', 'O', 'X'],
+        ['O', 'O', 'X'],
+      ],
+      [
+        ['O', 'X', 'X'],
+        ['X', 'O', ' '],
+        ['O', 'O', 'X'],
+      ],
+      [
+        ['O', 'X', 'X'],
+        ['X', 'O', 'X'],
+        ['O', 'O', ' '],
+      ],
+    ];
+
+    diagonalGrids = [
+      [
+        [' ', 'X', 'O'],
+        ['O', 'X', 'X'],
+        ['O', 'O', 'X'],
+      ],
+      [
+        ['X', 'X', 'O'],
+        ['O', ' ', 'X'],
+        ['O', 'O', 'X'],
+      ],
+      [
+        ['X', 'X', 'O'],
+        ['O', 'X', 'X'],
+        ['O', 'O', ' '],
+      ],
+      [
+        ['O', 'O', 'X'],
+        ['O', 'X', 'X'],
+        [' ', 'X', 'O'],
+      ],
+      [
+        ['O', 'O', 'X'],
+        ['O', ' ', 'X'],
+        ['X', 'X', 'O'],
+      ],
+      [
+        ['O', 'O', ' '],
+        ['O', 'X', 'X'],
+        ['X', 'X', 'O'],
+      ],
+    ];
+
+    // Define expected moves for each of the above
+    rowExpectedMoves = [
+      { x: 0, y: 0 },
+      { x: 1, y: 0 },
+      { x: 2, y: 0 },
+      { x: 0, y: 1 },
+      { x: 1, y: 1 },
+      { x: 2, y: 1 },
+      { x: 0, y: 2 },
+      { x: 1, y: 2 },
+      { x: 2, y: 2 },
+    ];
+
+    colExpectedMoves = [
+      { x: 0, y: 0 },
+      { x: 0, y: 1 },
+      { x: 0, y: 2 },
+      { x: 1, y: 0 },
+      { x: 1, y: 1 },
+      { x: 1, y: 2 },
+      { x: 2, y: 0 },
+      { x: 2, y: 1 },
+      { x: 2, y: 2 },
+    ];
+
+    diagonalExpectedMoves = [
+      { x: 0, y: 0 },
+      { x: 1, y: 1 },
+      { x: 2, y: 2 },
+      { x: 0, y: 2 },
+      { x: 1, y: 1 },
+      { x: 2, y: 0 },
+    ];
+  });
+
+  it('should determine blocking move for rows', () => {
+    // Iterate through row win grids
+    rowGrids.forEach((grid, index) => {
+      // Get expected move
+      const expected = rowExpectedMoves[index];
+
+      // Calculate actual move
+      const actual = findblockingMove('O', grid);
+
+      // Expect moves to match
+      expect(actual).toStrictEqual(expected);
+    });
+  });
+
+  it('should determine blocking move for columns', () => {
+    // Iterate through column win grids
+    colGrids.forEach((grid, index) => {
+      // Get expected move
+      const expected = colExpectedMoves[index];
+
+      // Calculate actual move
+      const actual = findblockingMove('O', grid);
+
+      // Expect moves to match
+      expect(actual).toStrictEqual(expected);
+    });
+  });
+
+  it('should determine blocking move for diagonals', () => {
+    // Iterate through diagonal win grids
+    diagonalGrids.forEach((grid, index) => {
+      // Get expected move
+      const expected = diagonalExpectedMoves[index];
+
+      // Calculate actual move
+      const actual = findblockingMove('O', grid);
+
+      // Expect moves to match
+      expect(actual).toStrictEqual(expected);
+    });
+  });
+
+  it('should return null if blocking move cannot be found', () => {
+    // Setup grid that has no blocking move
+    const grid: Grid = [
+      ['O', ' ', 'X'],
+      ['X', 'X', 'O'],
+      ['O', 'O', 'X'],
+    ];
+
+    // Attempt to calculate blocking move
+    const result = findblockingMove('O', grid);
+
+    // Expect calculation to have found no blocking move
+    expect(result).toBeNull();
+  });
+});
